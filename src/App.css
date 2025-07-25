@@ -114,6 +114,10 @@ body,
   margin: 10px;
 }
 .button-delete:hover {
+  background-color: rgb(21, 33, 44);
+  color: #ffffff;
+}
+.dark-mode .button-delete:hover {
   background-color: lightblue;
   color: #ffffff;
 }
