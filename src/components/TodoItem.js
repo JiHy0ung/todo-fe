@@ -1,12 +1,16 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 
-const TodoItem = ({ item, updateTask, deleteTask }) => {
+const TodoItem = ({ item, updateTask, deleteTask, darkMode }) => {
   // console.log("i", item);
   return (
     <Row>
       <Col xs={12}>
-        <div className={`todo-item ${item.isComplete ? "item-complete" : ""}`}>
+        <div
+          className={`todo-item ${darkMode ? "dark-mode" : ""} ${
+            item.isComplete ? "item-complete" : ""
+          }`}
+        >
           <div className="todo-content">{item.task}</div>
 
           <div>
