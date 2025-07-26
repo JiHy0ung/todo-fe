@@ -49,7 +49,7 @@ npm start
 ### .env(FrontEnd)
 ```
 REACT_APP_BACKEND_URL = http://localhost:port_number
-REACT_APP_BACKEND_PROXY = https://wondrous-belekoy-f115b9.netlify.app
+REACT_APP_BACKEND_PROXY = https://wondrous-belekoy-f115b9.netlify.app // or your website
 ```
 
 ### **BackEnd**
