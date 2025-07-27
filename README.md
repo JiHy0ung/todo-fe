@@ -13,16 +13,16 @@
 
 ## **⚒️사용 기술 스택**
 ### FrontEnd
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-squre&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-squre&logo=React&logoColor=black"> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=flat-squre&logo=bootstrap&logoColor=white"> <img src="https://img.shields.io/badge/axios-5A29E4?style=flat-squre&logo=axios&logoColor=white">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"> <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"> <img src="https://img.shields.io/badge/React Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white"> <img src="https://img.shields.io/badge/zustand-413c36?style=for-the-badge&logo=zustand&logoColor=white">
 
 ### BackEnd
-<img src="https://img.shields.io/badge/Node.js-5FA04E?style=flat-squre&logo=Node.js&logoColor=white"> <img src="https://img.shields.io/badge/Express-000000?style=flat-squre&logo=express&logoColor=white"> <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-squre&logo=MongoDB&logoColor=white"> <img src="https://img.shields.io/badge/Mongoose-880000?style=flat-squre&logo=Mongoose&logoColor=white">
+<img src="https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=Node.js&logoColor=white"> <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white"> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white"> <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=Mongoose&logoColor=white">
 
 ### Deployment
-<img src="https://img.shields.io/badge/netlify-00C7B7?style=flat-squre&logo=netlify&logoColor=white"> <img src="https://img.shields.io/badge/Amazon%20AWS-232F3E?style=flat-squre&logo=Amazon%20AWS&logoColor=white">
+<img src="https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white"> <img src="https://img.shields.io/badge/Amazon%20AWS-232F3E?style=for-the-badge&logo=Amazon%20AWS&logoColor=white">
 
 ### Config
-<img src="https://img.shields.io/badge/npm-CB3837?style=flat-squre&logo=npm&logoColor=white"> 
+<img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"> 
 
 
 ## **⚙️ 개발환경**
@@ -46,7 +46,7 @@ npm install
 npm start
 ```
 
-### .env(FrontEnd)
+### **.env(FrontEnd)**
 ```
 REACT_APP_BACKEND_URL = http://localhost:port_number
 REACT_APP_BACKEND_PROXY = https://wondrous-belekoy-f115b9.netlify.app // or your website
@@ -58,13 +58,15 @@ npm install
 nodemon app.js // npx nodemon app.js
 ```
 
-### .env(BackEnd)
+### **.env(BackEnd)**
 ```
 MONGODB_URI_PROD = your_mongodb_connection_string
 ```
 
 
 ## **✏️주요 기능**
+
+- [x] 로그인/회원가입 기능
 
 - [x] 할 일 추가 / 삭제
 
