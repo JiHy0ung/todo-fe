@@ -9,7 +9,7 @@
 **다크/라이트 모드**와 반응형 디자인을 지원합니다.
 
 ## **🕰️ 개발기간**
-2025.07.24 ~ 2025.07.28
+2025.07.24 ~ 2025.07.25
 
 ## **⚒️사용 기술 스택**
 ### FrontEnd
@@ -97,6 +97,8 @@ MONGODB_URI_PROD = your_mongodb_connection_string
 | POST   | `/tasks` | 새 할 일 추가 |
 | PUT    | `/tasks/:id` | 할 일 완료 상태 업데이트 |
 | DELETE | `/tasks/:id` | 할 일 삭제 |
+| POST   | `/register` | 회원가입 |
+| POST   | `/login` | 로그인 |
 
 
 ## **📂 폴더 구조**
