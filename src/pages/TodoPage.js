@@ -171,9 +171,6 @@ const TodoPage = () => {
             </button>
           </Col>
         </Row>
-        <button className="button-add" onClick={navigate("/login")}>
-          로그인
-        </button>
         {userName && (
           <div className="d-flex justify-content-between">
             <h4>
