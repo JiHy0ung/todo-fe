@@ -107,6 +107,7 @@ const TodoPage = () => {
   };
 
   useEffect(() => {
+    if (!userName) navigate("/login");
     getTasks();
   }, []);
 
