@@ -48,7 +48,9 @@ const LoginPage = () => {
 
   return (
     <div className={`${darkMode ? "dark-mode" : "light-mode"} display-center`}>
-      <Form className="w-100 d-flex gap-2 p-2 justify-content-end align-items-center">
+      <Form
+        className={`d-flex gap-2 p-2 justify-content-end align-items-center`}
+      >
         <Form.Label
           className={`d-flex align-items-center justify-content-center fs-6 mb-0 ${
             darkMode ? "text-white" : "text-black"
@@ -64,7 +66,6 @@ const LoginPage = () => {
           className="d-flex justify-content-center align-self-center"
         ></Form.Check>
       </Form>
-
       <Form className="login-box" onSubmit={handleLogin}>
         <h1>로그인</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -91,7 +92,7 @@ const LoginPage = () => {
         {error && <p className="text-danger mb-1">{error}</p>}
         <div className="button-box">
           <Button type="submit" className="button-primary">
-            Login
+            로그인
           </Button>
           <span>
             계정이 없다면? <Link to="/register">회원가입 하기</Link>

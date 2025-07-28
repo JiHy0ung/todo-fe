@@ -39,7 +39,7 @@ const RegisterPage = () => {
 
   return (
     <div className={`${darkMode ? "dark-mode" : "light-mode"} display-center`}>
-      <Form className="w-100 d-flex gap-2 p-2 justify-content-end align-items-center">
+      <Form className="d-flex gap-2 p-2 justify-content-end align-items-center">
         <Form.Label
           className={`d-flex align-items-center justify-content-center fs-6 mb-0 ${
             darkMode ? "text-white" : "text-black"
@@ -55,7 +55,6 @@ const RegisterPage = () => {
           className="d-flex justify-content-center align-self-center"
         ></Form.Check>
       </Form>
-
       <Form className="login-box" onSubmit={handleRegister}>
         <h1>회원가입</h1>
         <Form.Group className="mb-3" controlId="formName">
@@ -103,9 +102,19 @@ const RegisterPage = () => {
           />
         </Form.Group>
 
-        <Button className="button-primary" type="submit">
-          회원가입
-        </Button>
+        <div className="d-flex justify-content-between">
+          <Button
+            className="button-primary"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            돌아가기
+          </Button>
+          <Button className="button-primary" type="submit">
+            회원가입
+          </Button>
+        </div>
       </Form>
     </div>
   );

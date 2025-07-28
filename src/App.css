@@ -57,6 +57,7 @@ body,
   background-color: rgb(0, 9, 18);
 }
 .todo-contents {
+  font-family: "Paperlogy-5Medium";
   font-size: 14px;
   border-inline: 1px solid lightblue;
   border-bottom: 1px solid lightblue;
@@ -70,7 +71,10 @@ body,
 .todo-contents-complete {
   text-decoration: line-through;
   background-color: rgb(175, 175, 175);
-  color: white;
+  color: rgb(153, 153, 153);
+}
+.dark-mode .todo-contents-complete {
+  background-color: rgb(14, 22, 30);
 }
 .add-item-row {
   margin-top: 10px !important;
@@ -207,9 +211,9 @@ body,
 }
 
 .button-primary {
-  background-color: lightblue;
+  background-color: lightblue !important;
   color: #ffffff;
-  border: none;
+  border: none !important;
 }
 
 .no-toggle-icon .accordion-button::after {
