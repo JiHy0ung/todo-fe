@@ -1,18 +1,20 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import darkModeStore from "../stores/darkModeStore";
 
-const TodoItem = ({ item, updateTask, deleteTask, darkMode }) => {
+const TodoItem = ({ item, updateTask, deleteTask }) => {
   // console.log("i", item);
+  const { darkMode } = darkModeStore();
+
   return (
     <Row>
-      <Col xs={12}>
+      <Col xs={12} className="pb-2">
         <div
           className={`todo-item ${darkMode ? "dark-mode" : ""} ${
             item.isComplete ? "item-complete" : ""
           }`}
         >
-          <div className="todo-content">{item.task}</div>
-
+          <div className="py-1 px-3">{item.task}</div>
           <div>
             <button
               className={`button-delete ${
@@ -32,6 +34,15 @@ const TodoItem = ({ item, updateTask, deleteTask, darkMode }) => {
             </button>
           </div>
         </div>
+        {item.contents && (
+          <div
+            className={`todo-contents ${darkMode ? "dark-mode" : ""} ${
+              item.isComplete && "todo-contents-complete"
+            }`}
+          >
+            {item.contents}
+          </div>
+        )}
       </Col>
     </Row>
   );

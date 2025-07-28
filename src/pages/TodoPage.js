@@ -10,10 +10,12 @@ import { useEffect, useState } from "react";
 import api from "../utils/api";
 import { Form, Toast } from "react-bootstrap";
 import darkModeStore from "../stores/darkModeStore";
+import userStore from "../stores/userStore";
 
 const TodoPage = () => {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
+  const [todoContentsValue, setTodoContentsValue] = useState("");
   const [placeholder, setPlaceholder] = useState("할 일을 입력하세요.");
   const [placeholderColor, setPlaceholderColor] = useState("grey");
 
@@ -21,6 +23,9 @@ const TodoPage = () => {
   const [toastMessage, setToastMessage] = useState("");
 
   const { darkMode, isDarkMode } = darkModeStore();
+  const { userName } = userStore();
+
+  const completeCount = todoList.filter((item) => item.isComplete).length;
 
   const getTasks = async () => {
     const response = await api.get("/tasks");
@@ -29,7 +34,7 @@ const TodoPage = () => {
 
   const addTask = async () => {
     if (todoValue.trim() === "") {
-      setPlaceholder("내용을 입력해주세요!");
+      setPlaceholder("할 일을 비어있어요!");
       setPlaceholderColor("lightsalmon");
       return;
     }
@@ -37,11 +42,13 @@ const TodoPage = () => {
     try {
       const response = await api.post("/tasks", {
         task: todoValue,
+        contents: todoContentsValue,
         isComplete: false,
       });
       if (response.status === 200) {
         console.log("success");
         setTodoValue("");
+        setTodoContentsValue("");
         setPlaceholder("할 일을 입력하세요.");
         setToastMessage(
           `${todoValue}을/를 성공적으로 추가했습니다! 꼭 성공하시길 바래요!`
@@ -65,7 +72,7 @@ const TodoPage = () => {
       if (response.status === 200) {
         console.log("updated");
         if (task.isComplete) {
-          setToastMessage("다 못 끝내신건가요? ㅠ,.ㅠ");
+          setToastMessage("다 못 끝내신건가요? ㅠ.,ㅠ");
         } else {
           setToastMessage(`${task.task}을/를 마치셨군요! 축하드립니다!!`);
         }
@@ -126,7 +133,8 @@ const TodoPage = () => {
           <h1 className="d-flex justify-content-center align-items-center py-3 text-extra-bold">
             TODO LIST
           </h1>
-          <Col xs={12} sm={10}>
+
+          <Col xs={12}>
             <input
               type="text"
               placeholder={placeholder}
@@ -140,12 +148,38 @@ const TodoPage = () => {
               style={{ "--placeholder-color": placeholderColor }}
             />
           </Col>
-          <Col xs={12} sm={2}>
+          <Col xs={12}>
+            <input
+              type="text"
+              placeholder="내용을 입력하세요."
+              className="input-box"
+              value={todoContentsValue}
+              onChange={(e) => {
+                setTodoContentsValue(e.target.value);
+                setPlaceholder("내용을 입력하세요.");
+                setPlaceholderColor("grey");
+              }}
+              style={{ "--placeholder-color": placeholderColor }}
+            />
+          </Col>
+          <Col xs={12}>
             <button className="button-add" onClick={addTask}>
               추가
             </button>
           </Col>
         </Row>
+
+        {userName && (
+          <div className="d-flex justify-content-between">
+            <h4>
+              <span className="text-extra-bold">{userName}</span>님 어서오세요!
+            </h4>
+            <p>
+              {completeCount} /
+              <span className="text-extra-bold"> {todoList.length}</span>
+            </p>
+          </div>
+        )}
 
         <TodoBoard
           todoList={todoList}

@@ -42,7 +42,7 @@ const RegisterPage = () => {
       <Form className="d-flex gap-2 pt-2 justify-content-end align-items-center">
         <Form.Label
           className={`d-flex align-items-center justify-content-center fs-6 mb-0 ${
-            darkMode ? "text-black" : "text-white"
+            darkMode ? "text-white" : "text-black"
           }`}
         >
           {darkMode ? "Dark Mode" : "Light Mode"}

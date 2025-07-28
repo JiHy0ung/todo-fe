@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../utils/api";
 import darkModeStore from "../stores/darkModeStore";
+import userStore from "../stores/userStore";
 
 const LoginPage = () => {
   const { darkMode, isDarkMode } = darkModeStore();
@@ -16,6 +17,8 @@ const LoginPage = () => {
 
   const [user, setUser] = useState(null);
 
+  const { setUserName } = userStore();
+
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -26,6 +29,7 @@ const LoginPage = () => {
       if (response.status === 200) {
         // 유저 정보 저장
         setUser(response.data.user);
+        setUserName(response.data.user.name);
         // 토큰 값 저장 (세선 스토리지/로컬 스토리지)
         sessionStorage.setItem("token", response.data.token);
         // localStorage.setItem("token", response.data.user.token);

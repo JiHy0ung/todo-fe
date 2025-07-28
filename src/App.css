@@ -43,23 +43,34 @@ body,
 }
 
 .dark-mode .todo-item {
-  font-family: "Paperlogy-5Medium";
-  border: 1px solid lightblue;
   background-color: rgb(0, 20, 37);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .todo-item {
   font-family: "Paperlogy-5Medium";
-  border: 1px solid lightblue;
+  border: 1.5px solid lightblue;
   background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.todo-content {
-  padding: 1em;
+.dark-mode .todo-contents {
+  background-color: rgb(0, 9, 18);
+}
+.todo-contents {
+  font-size: 14px;
+  border-inline: 1px solid lightblue;
+  border-bottom: 1px solid lightblue;
+  padding-inline: 1rem;
+  padding-block: 0.725rem;
+  background-color: rgb(251, 251, 251);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.todo-contents-complete {
+  text-decoration: line-through;
+  background-color: rgb(175, 175, 175);
+  color: white;
 }
 .add-item-row {
   margin-top: 10px !important;
@@ -90,6 +101,7 @@ body,
 
 .button-add {
   font-family: "Paperlogy-8ExtraBold";
+  font-size: 1.25rem;
   height: 46px;
   width: 100%;
   border: none;
@@ -100,6 +112,7 @@ body,
   background-color: rgb(21, 33, 44);
   color: lightblue;
   border: 2px solid lightblue;
+  border-top: none;
 }
 .button-delete {
   background-color: white;
@@ -197,4 +210,8 @@ body,
   background-color: lightblue;
   color: #ffffff;
   border: none;
+}
+
+.no-toggle-icon .accordion-button::after {
+  display: none;
 }

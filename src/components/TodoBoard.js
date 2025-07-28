@@ -1,7 +1,10 @@
 import React from "react";
 import TodoItem from "./TodoItem";
+import darkModeStore from "../stores/darkModeStore";
 
-const TodoBoard = ({ todoList, updateTask, deleteTask, darkMode }) => {
+const TodoBoard = ({ todoList, updateTask, deleteTask }) => {
+  const { darkMode } = darkModeStore();
+
   return (
     <div>
       {todoList.length > 0 ? (
@@ -11,7 +14,6 @@ const TodoBoard = ({ todoList, updateTask, deleteTask, darkMode }) => {
             item={item}
             updateTask={updateTask}
             deleteTask={deleteTask}
-            darkMode={darkMode}
           />
         ))
       ) : (
