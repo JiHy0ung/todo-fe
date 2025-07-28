@@ -43,7 +43,9 @@ const RegisterPage = () => {
         }
       }
     } catch (err) {
-      setError(err.message);
+      const error = err.message || err.err;
+      setError(error);
+      console.log("error:", error);
     }
   };
 
