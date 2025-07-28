@@ -48,7 +48,7 @@ const LoginPage = () => {
 
   return (
     <div className={`${darkMode ? "dark-mode" : "light-mode"} display-center`}>
-      <Form className="d-flex gap-2 pt-2 justify-content-end align-items-center">
+      <Form className="w-100 d-flex gap-2 p-2 justify-content-end align-items-center">
         <Form.Label
           className={`d-flex align-items-center justify-content-center fs-6 mb-0 ${
             darkMode ? "text-white" : "text-black"
