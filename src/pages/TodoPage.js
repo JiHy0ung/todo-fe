@@ -11,6 +11,7 @@ import api from "../utils/api";
 import { Form, Toast } from "react-bootstrap";
 import darkModeStore from "../stores/darkModeStore";
 import userStore from "../stores/userStore";
+import { useNavigate } from "react-router-dom";
 
 const TodoPage = () => {
   const [todoList, setTodoList] = useState([]);
@@ -24,6 +25,8 @@ const TodoPage = () => {
 
   const { darkMode, isDarkMode } = darkModeStore();
   const { userName } = userStore();
+
+  const navigate = useNavigate();
 
   const completeCount = todoList.filter((item) => item.isComplete).length;
 
@@ -168,7 +171,9 @@ const TodoPage = () => {
             </button>
           </Col>
         </Row>
-
+        <button className="button-add" onClick={navigate("/login")}>
+          로그인
+        </button>
         {userName && (
           <div className="d-flex justify-content-between">
             <h4>
@@ -180,7 +185,6 @@ const TodoPage = () => {
             </p>
           </div>
         )}
-
         <TodoBoard
           todoList={todoList}
           updateTask={updateTask}
