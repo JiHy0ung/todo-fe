@@ -21,6 +21,16 @@ const RegisterPage = () => {
 
     try {
       // 비밀번호 일치 확인
+      if (!name.trim()) {
+        throw new Error("이름을 입력해주세요.");
+      } else if (!email.trim()) {
+        throw new Error("이메일을 입력해주세요.");
+      } else if (!password.trim()) {
+        throw new Error("비밀번호를 입력해주세요.");
+      } else if (confirmPassword.trim() === "") {
+        throw new Error("비밀번호 확인을 진행해주세요.");
+      }
+
       if (password !== confirmPassword) {
         throw new Error("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
       } else {
@@ -57,6 +67,7 @@ const RegisterPage = () => {
       </Form>
       <Form className="login-box" onSubmit={handleRegister}>
         <h1>회원가입</h1>
+        {error && <p className="text-danger mb-1">{error}</p>}
         <Form.Group className="mb-3" controlId="formName">
           <Form.Label>Name</Form.Label>
           <Form.Control
@@ -92,7 +103,6 @@ const RegisterPage = () => {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>re-enter password</Form.Label>
-          {error && <p className="text-danger mb-1">{error}</p>}
           <Form.Control
             type="password"
             placeholder="re-enter password"
