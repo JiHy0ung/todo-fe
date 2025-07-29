@@ -33,6 +33,7 @@ const TodoPage = () => {
   const getTasks = async () => {
     const response = await api.get("/tasks");
     setTodoList(response.data.data);
+    console.log("dataaa", response.data.data);
   };
 
   const addTask = async () => {
@@ -107,7 +108,6 @@ const TodoPage = () => {
   };
 
   useEffect(() => {
-    if (!userName) navigate("/login");
     getTasks();
   }, []);
 
@@ -117,22 +117,25 @@ const TodoPage = () => {
       className={`${darkMode ? "dark-mode" : "light-mode"} container`}
     >
       <Container>
-        <Form className="d-flex gap-2 pt-2 justify-content-end align-items-center">
-          <Form.Label
-            className={`d-flex align-items-center justify-content-center fs-6 mb-0 ${
-              darkMode ? "text-white" : "text-black"
-            }`}
-          >
-            {darkMode ? "Dark Mode" : "Light Mode"}
-          </Form.Label>
-          <Form.Check
-            type="switch"
-            id="dark-mode-switch"
-            onClick={isDarkMode}
-            checked={darkMode}
-            className="d-flex justify-content-center align-self-center"
-          ></Form.Check>
-        </Form>
+        <div className="d-flex justify-content-between">
+          <Form className="d-flex gap-2 pt-2 justify-content-start align-items-center">
+            <Form.Label
+              className={`d-flex align-items-center justify-content-center fs-6 mb-0 ${
+                darkMode ? "text-white" : "text-black"
+              }`}
+            >
+              {darkMode ? "Dark Mode" : "Light Mode"}
+            </Form.Label>
+            <Form.Check
+              type="switch"
+              id="dark-mode-switch"
+              onClick={isDarkMode}
+              checked={darkMode}
+              className="d-flex justify-content-center align-self-center"
+            ></Form.Check>
+          </Form>
+          <button className="log-out-button">Log Out</button>
+        </div>
         <Row className="add-item-row">
           <h1 className="d-flex justify-content-center align-items-center py-3 text-extra-bold">
             TODO LIST

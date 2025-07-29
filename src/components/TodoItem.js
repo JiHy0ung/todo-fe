@@ -14,7 +14,10 @@ const TodoItem = ({ item, updateTask, deleteTask }) => {
             item.isComplete ? "item-complete" : ""
           }`}
         >
-          <div className="py-1 px-3">{item.task}</div>
+          <div className="py-1 px-3">
+            {item.author && `${item.author.name} - `}
+            {item.task}
+          </div>
           <div>
             <button
               className={`button-delete ${

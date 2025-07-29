@@ -2,20 +2,18 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import api from "../utils/api";
 import darkModeStore from "../stores/darkModeStore";
 import userStore from "../stores/userStore";
 
-const LoginPage = () => {
+const LoginPage = ({ user, setUser }) => {
   const { darkMode, isDarkMode } = darkModeStore();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
-
-  const [user, setUser] = useState(null);
 
   const { setUserName } = userStore();
 
@@ -45,6 +43,10 @@ const LoginPage = () => {
       setError(err.err);
     }
   };
+
+  if (user) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className={`${darkMode ? "dark-mode" : "light-mode"} display-center`}>

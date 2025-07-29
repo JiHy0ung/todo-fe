@@ -219,3 +219,11 @@ body,
 .no-toggle-icon .accordion-button::after {
   display: none;
 }
+
+.log-out-button {
+  justify-content: center;
+  align-items: end;
+  background: none;
+  color: lightblue;
+  border: none;
+}
