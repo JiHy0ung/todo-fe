@@ -13,7 +13,7 @@ import darkModeStore from "../stores/darkModeStore";
 import userStore from "../stores/userStore";
 import { useNavigate } from "react-router-dom";
 
-const TodoPage = () => {
+const TodoPage = ({ setUser }) => {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
   const [todoContentsValue, setTodoContentsValue] = useState("");
@@ -107,6 +107,11 @@ const TodoPage = () => {
     }
   };
 
+  const logOut = () => {
+    sessionStorage.clear();
+    setUser("");
+  };
+
   useEffect(() => {
     getTasks();
   }, []);
@@ -134,7 +139,9 @@ const TodoPage = () => {
               className="d-flex justify-content-center align-self-center"
             ></Form.Check>
           </Form>
-          <button className="log-out-button">Log Out</button>
+          <button className="log-out-button" onClick={logOut}>
+            Log Out
+          </button>
         </div>
         <Row className="add-item-row">
           <h1 className="d-flex justify-content-center align-items-center py-3 text-extra-bold">
