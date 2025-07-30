@@ -221,6 +221,10 @@ body,
   border: none !important;
 }
 
+.button-primary:hover {
+  background-color: rgb(108, 190, 218) !important;
+}
+
 .no-toggle-icon .accordion-button::after {
   display: none;
 }
