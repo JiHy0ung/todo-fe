@@ -71,10 +71,11 @@ body,
 .todo-contents-complete {
   text-decoration: line-through;
   background-color: rgb(175, 175, 175);
-  color: rgb(153, 153, 153);
+  color: rgb(222, 222, 222);
 }
 .dark-mode .todo-contents-complete {
   background-color: rgb(14, 22, 30);
+  color: rgb(153, 153, 153);
 }
 .add-item-row {
   margin-top: 10px !important;
@@ -144,10 +145,11 @@ body,
   background-color: rgb(21, 33, 44);
   color: rgb(153, 153, 153);
 }
+
 .item-complete {
   text-decoration: line-through;
   background-color: rgb(175, 175, 175);
-  color: white;
+  color: rgb(222, 222, 222);
 }
 .dark-mode .button-complete {
   background-color: rgb(21, 33, 44);
