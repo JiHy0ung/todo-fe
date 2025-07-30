@@ -65,7 +65,7 @@ const LoginPage = ({ user, setUser }) => {
         ></Form.Check>
       </Form>
       <Form
-        className={`${darkMode ? "dark-mode" : "light-mode"} login-box`}
+        className={`${darkMode ? "dark-mode" : ""} login-box`}
         onSubmit={handleLogin}
       >
         <h1>로그인</h1>
