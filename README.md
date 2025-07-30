@@ -1,22 +1,26 @@
-## **📍TODO LIST**
+## **📍 TODO LIST**
 **MERN**스택으로 개발한 [TODO LIST](https://wondrous-belekoy-f115b9.netlify.app/)    사이트
 
-## **📝 프로젝트 소개**
+## **📝  프로젝트 소개**
 간단하고 직관적인 **할 일 관리 웹** 애플리케이션입니다.
 
 **MERN**(MongoDB, Express, React, Node.js) 스택을 활용하여 CRUD기능을 구현하고,
 
+**사용자 개인별 할 일**을 확인 가능합니다.
+
 **다크/라이트 모드**와 반응형 디자인을 지원합니다.
 
-## **🕰️ 개발기간**
-2025.07.24 ~ 2025.07.25
+## **🕰️  개발기간**
+2025.07.24 ~ 2025.07.29
 
-## **⚒️사용 기술 스택**
+## **⚒️ 사용 기술 스택**
 ### FrontEnd
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"> <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"> <img src="https://img.shields.io/badge/React Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white"> <img src="https://img.shields.io/badge/zustand-413c36?style=for-the-badge&logo=zustand&logoColor=white">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"> <img src="https://img.shields.io/badge/reactbootstrap-41E0FD?style=for-the-badge&logo=reactbootstrap&logoColor=white">  <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"> <img src="https://img.shields.io/badge/React Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white"> <img src="https://img.shields.io/badge/zustand-413c36?style=for-the-badge&logo=zustand&logoColor=white">
 
 ### BackEnd
 <img src="https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=Node.js&logoColor=white"> <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white"> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white"> <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=Mongoose&logoColor=white">
+
+
 
 ### Deployment
 <img src="https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white"> <img src="https://img.shields.io/badge/Amazon%20AWS-232F3E?style=for-the-badge&logo=Amazon%20AWS&logoColor=white">
@@ -33,7 +37,7 @@
 * MongoDB Atlas
 * AWS Elastic Beanstalk
 
-## **📔시작 가이드**
+## **📔 시작 가이드**
 ### **설치**
 ```
 https://github.com/JiHy0ung/todo-fe.git
@@ -64,7 +68,7 @@ MONGODB_URI_PROD = your_mongodb_connection_string
 ```
 
 
-## **✏️주요 기능**
+## **✏️ 주요 기능**
 
 - [x] 로그인/회원가입 기능
 
@@ -90,15 +94,16 @@ MONGODB_URI_PROD = your_mongodb_connection_string
 <img width="345" height="126" alt="image" src="https://github.com/user-attachments/assets/1f59d773-2aec-444e-8813-d3ccdd848cac" /> ㅤ <img width="96" height="126" alt="image" src="https://github.com/user-attachments/assets/927f757f-f790-4fea-b0c2-ee824050758c" />
 
 
-## **🧾API 명세**
+## **🧾 API 명세**
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET    | `/tasks` | 모든 할 일 조회 |
 | POST   | `/tasks` | 새 할 일 추가 |
 | PUT    | `/tasks/:id` | 할 일 완료 상태 업데이트 |
 | DELETE | `/tasks/:id` | 할 일 삭제 |
-| POST   | `/register` | 회원가입 |
-| POST   | `/login` | 로그인 |
+| POST   | `/user/register` | 회원가입 |
+| POST   | `/user/login` | 로그인 |
+| GET   | `/user/me` | 로그인된 유저 정보 가져오기 |
 
 
 ## **📂 폴더 구조**
