@@ -193,6 +193,9 @@ body,
   background-color: white;
   padding: 20px;
 }
+.dark-mode .login-box {
+  background-color: rgb(0, 20, 37);
+}
 .login-box label {
   font-weight: 700;
 }
@@ -226,4 +229,8 @@ body,
   background: none;
   color: lightblue;
   border: none;
+}
+
+.text-small {
+  font-size: 12px;
 }

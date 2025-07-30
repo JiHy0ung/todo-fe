@@ -35,7 +35,6 @@ const RegisterPage = () => {
         throw new Error("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
       } else {
         const response = await api.post("/user", { name, email, password });
-        // console.log("response: ", response);
         if (response.status === 200) {
           navigate("/login");
         } else {

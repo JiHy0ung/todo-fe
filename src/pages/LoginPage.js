@@ -5,7 +5,6 @@ import Form from "react-bootstrap/Form";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import api from "../utils/api";
 import darkModeStore from "../stores/darkModeStore";
-import userStore from "../stores/userStore";
 
 const LoginPage = ({ user, setUser }) => {
   const { darkMode, isDarkMode } = darkModeStore();
@@ -14,8 +13,6 @@ const LoginPage = ({ user, setUser }) => {
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
-
-  const { setUserName } = userStore();
 
   const navigate = useNavigate();
 
@@ -27,7 +24,6 @@ const LoginPage = ({ user, setUser }) => {
       if (response.status === 200) {
         // 유저 정보 저장
         setUser(response.data.user);
-        setUserName(response.data.user.name);
         // 토큰 값 저장 (세선 스토리지/로컬 스토리지)
         sessionStorage.setItem("token", response.data.token);
         // localStorage.setItem("token", response.data.user.token);
@@ -68,7 +64,10 @@ const LoginPage = ({ user, setUser }) => {
           className="d-flex justify-content-center align-self-center"
         ></Form.Check>
       </Form>
-      <Form className="login-box" onSubmit={handleLogin}>
+      <Form
+        className={`${darkMode ? "dark-mode" : "light-mode"} login-box`}
+        onSubmit={handleLogin}
+      >
         <h1>로그인</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>E-mail</Form.Label>

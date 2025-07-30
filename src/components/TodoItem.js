@@ -3,7 +3,6 @@ import { Col, Row } from "react-bootstrap";
 import darkModeStore from "../stores/darkModeStore";
 
 const TodoItem = ({ item, updateTask, deleteTask }) => {
-  // console.log("i", item);
   const { darkMode } = darkModeStore();
 
   return (
@@ -15,8 +14,10 @@ const TodoItem = ({ item, updateTask, deleteTask }) => {
           }`}
         >
           <div className="py-1 px-3">
-            {item.author && `${item.author.name} - `}
-            {item.task}
+            <span>{item.task}</span>
+            <span className="text-small">
+              {item.author && ` by ${item.author.name}`}
+            </span>
           </div>
           <div>
             <button

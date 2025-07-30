@@ -10,10 +10,8 @@ import { useEffect, useState } from "react";
 import api from "../utils/api";
 import { Form, Toast } from "react-bootstrap";
 import darkModeStore from "../stores/darkModeStore";
-import userStore from "../stores/userStore";
-import { useNavigate } from "react-router-dom";
 
-const TodoPage = ({ setUser }) => {
+const TodoPage = ({ user, setUser }) => {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
   const [todoContentsValue, setTodoContentsValue] = useState("");
@@ -24,16 +22,13 @@ const TodoPage = ({ setUser }) => {
   const [toastMessage, setToastMessage] = useState("");
 
   const { darkMode, isDarkMode } = darkModeStore();
-  const { userName } = userStore();
-
-  const navigate = useNavigate();
 
   const completeCount = todoList.filter((item) => item.isComplete).length;
+  const userTodoList = todoList.filter((item) => item.author._id === user._id);
 
   const getTasks = async () => {
     const response = await api.get("/tasks");
     setTodoList(response.data.data);
-    console.log("dataaa", response.data.data);
   };
 
   const addTask = async () => {
@@ -182,19 +177,19 @@ const TodoPage = ({ setUser }) => {
             </button>
           </Col>
         </Row>
-        {userName && (
+        {user && (
           <div className="d-flex justify-content-between">
             <h4>
-              <span className="text-extra-bold">{userName}</span>님 어서오세요!
+              <span className="text-extra-bold">{user.name}</span>님 어서오세요!
             </h4>
             <p>
               {completeCount} /
-              <span className="text-extra-bold"> {todoList.length}</span>
+              <span className="text-extra-bold">{userTodoList.length}</span>
             </p>
           </div>
         )}
         <TodoBoard
-          todoList={todoList}
+          todoList={userTodoList}
           updateTask={updateTask}
           deleteTask={deleteTask}
           darkMode={darkMode}

@@ -33,7 +33,7 @@ function App() {
         path="/"
         element={
           <PrivateRoute user={user}>
-            <TodoPage setUser={setUser} />
+            <TodoPage user={user} setUser={setUser} />
           </PrivateRoute>
         }
       />
