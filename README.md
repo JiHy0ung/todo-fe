@@ -1,6 +1,12 @@
 ## **📍 TODO LIST**
 **MERN**스택으로 개발한 [TODO LIST](https://wondrous-belekoy-f115b9.netlify.app/)    사이트
 
+#### **로그인**
+
+> ID: hong@gmail.com
+> 
+> PW: 1234
+
 ## **📝  프로젝트 소개**
 간단하고 직관적인 **할 일 관리 웹** 애플리케이션입니다.
 
