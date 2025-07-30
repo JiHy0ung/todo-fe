@@ -82,16 +82,25 @@ MONGODB_URI_PROD = your_mongodb_connection_string
 
 ㅤ
 
-**Light Mode**
-
-<img width="345" height="131" alt="image" src="https://github.com/user-attachments/assets/fc998c25-eaf2-4256-8487-dde39135d52f" /> ㅤ <img width="94" height="131" alt="image" src="https://github.com/user-attachments/assets/83130c93-74a9-4df7-8155-8a1b238ff9ed" />
-
-
-
-
 **Dark Mode**
 
-<img width="345" height="126" alt="image" src="https://github.com/user-attachments/assets/1f59d773-2aec-444e-8813-d3ccdd848cac" /> ㅤ <img width="96" height="126" alt="image" src="https://github.com/user-attachments/assets/927f757f-f790-4fea-b0c2-ee824050758c" />
+로그인, 회원가입, 메인페이지
+
+<img width="179" height="197" alt="image" src="https://github.com/user-attachments/assets/5ebbb44e-82de-492a-9414-701ec85c1439" /> <img width="179" height="197" alt="image" src="https://github.com/user-attachments/assets/79edec27-36b1-4e6e-a2e0-53eee1784a5d" /> <img width="179" height="198" alt="image" src="https://github.com/user-attachments/assets/c0c93429-9b09-449c-8dc4-66c1cdc5fe46" />
+
+토스트 메세지 - 할 일 추가, 할 일 끝냄, 할 일 삭제
+
+<img width="179" height="198" alt="image" src="https://github.com/user-attachments/assets/53f7dc6c-21ab-4085-9fe9-85c103b5846f" /> <img width="179" height="198" alt="image" src="https://github.com/user-attachments/assets/591ae679-d2ed-4111-845e-0e8a83562a92" /> <img width="179" height="197" alt="image" src="https://github.com/user-attachments/assets/25174f5c-459c-475b-ab0c-3d6f4115cb84" /> <img width="179" height="197" alt="image" src="https://github.com/user-attachments/assets/56b053b5-3570-4c5c-8cdf-777250e3937a" />
+
+
+**Light Mode**
+
+로그인, 회원가입, 메인페이지
+
+<img width="180" height="198" alt="image" src="https://github.com/user-attachments/assets/0dfbcadf-d80e-46ee-bcb0-3123650ca282" />
+ <img width="179" height="198" alt="image" src="https://github.com/user-attachments/assets/83cf515b-3653-4378-8067-76cbe4febdbc" /> <img width="180" height="198" alt="image" src="https://github.com/user-attachments/assets/be51e067-e16f-4958-8710-a66f841b7674" />
+
+
 
 
 ## **🧾 API 명세**
